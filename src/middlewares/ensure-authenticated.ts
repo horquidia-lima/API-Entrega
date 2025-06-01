@@ -13,7 +13,7 @@ function ensureAuthenticated(request: Request, response: Response, next: NextFun
         const authHeader = request.headers.authorization;
 
         if (!authHeader) {
-            throw new AppError("JWT token not foundg", 401);
+            throw new AppError("JWT token not found", 401);
         }
 
         const [, token] = authHeader.split(" ");

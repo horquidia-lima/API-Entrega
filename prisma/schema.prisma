@@ -9,7 +9,7 @@ datasource db {
 
 enum userRole {
   customer
-  role
+  sale
 }
 
 enum deliveryStatus {
