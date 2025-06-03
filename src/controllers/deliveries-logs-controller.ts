@@ -18,6 +18,10 @@ class DeliveriesLogsController {
             throw new AppError("Delivery not found", 404);
         }
 
+        if(delivery.status === "delivered") {
+            throw new AppError("Delivery already delivered");
+        }
+
         if(delivery.status === "processing") {
             throw new AppError("Change status to shipped");
         }
