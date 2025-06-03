@@ -10,5 +10,6 @@ const deliveryLogsRoutes = Router();
 const deliveryLogsController = new DeliveriesLogsController();
 
 deliveryLogsRoutes.post("/", ensureAuthenticated, verifyUserAuthorization(["sale"]),deliveryLogsController.create);
+deliveryLogsRoutes.get("/:delivery_id/show", ensureAuthenticated, verifyUserAuthorization(["sale", "customer"]),deliveryLogsController.show);
 
 export { deliveryLogsRoutes };
